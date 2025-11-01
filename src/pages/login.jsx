@@ -1,60 +1,186 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// REMOVED: import { useNavigate } from "react-router-dom";
 
 // --- SVG Icons ---
 
 // Google Icon
 const IconGoogle = () => (
   <svg className="w-5 h-5" viewBox="0 0 48 48">
-    <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"></path>
-    <path fill="#FF3D00" d="M6.306 14.691c-1.124 3.449-1.124 7.169 0 10.618C3.12 30.638 0 36.884 0 44v4h15.241c1.47 0 2.855-.205 4.162-.574C13.018 39.51 8.28 32.657 6.306 14.691z"></path>
-    <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"></path>
-    <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-0.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C39.99 36.196 44 30.62 44 24c0-1.341-.138-2.65-.389-3.917z"></path>
+    <path
+      fill="#FFC107"
+      d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
+    ></path>
+    <path
+      fill="#FF3D00"
+      d="M6.306 14.691c-1.124 3.449-1.124 7.169 0 10.618C3.12 30.638 0 36.884 0 44v4h15.241c1.47 0 2.855-.205 4.162-.574C13.018 39.51 8.28 32.657 6.306 14.691z"
+    ></path>
+    <path
+      fill="#4CAF50"
+      d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"
+    ></path>
+    <path
+      fill="#1976D2"
+      d="M43.611 20.083H42V20H24v8h11.303c-0.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C39.99 36.196 44 30.62 44 24c0-1.341-.138-2.65-.389-3.917z"
+    ></path>
   </svg>
 );
 
 // Facebook Icon
 const IconFacebook = () => (
-  <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+  <svg
+    className="w-5 h-5 text-blue-600"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
     <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.525h-1.313c-1.248 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
   </svg>
 );
 
 // Eye Open Icon
 const IconEye = () => (
-  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+  <svg
+    className="w-5 h-5 text-gray-500"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+    ></path>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+    ></path>
   </svg>
 );
 
 // Eye Closed Icon
 const IconEyeOff = () => (
-  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274 4.057 5.064 7 9.542 7 1.817 0 3.518.59 4.95 1.625M15.15 15.15A3 3 0 0112 12m0 0a3 3 0 00-3.15 3.15m3.15-3.15L18.825 8.825M4.93 4.93l14.14 14.14"></path>
+  <svg
+    className="w-5 h-5 text-gray-500"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274 4.057 5.064 7 9.542 7 1.817 0 3.518.59 4.95 1.625M15.15 15.15A3 3 0 0112 12m0 0a3 3 0 00-3.15 3.15m3.15-3.15L18.825 8.825M4.93 4.93l14.14 14.14"
+    ></path>
   </svg>
 );
 
+// --- NEW Success Toast Component ---
+// This component will render the pop-up message.
+const SuccessToast = ({ message }) => {
+  if (!message) return null;
 
-// --- Main App Component ---
-// This component holds the state for toggling between Login and Register forms
-export default function App() {
+  return (
+    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-out">
+      {message}
+    </div>
+  );
+};
+
+// --- NEW Home Page Component ---
+// This is the page we "navigate" to after login
+const HomePage = ({ setPage }) => {
+  // Get user from localStorage to display name
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    setPage("auth"); // "Navigate" back to the auth page
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white font-sans p-8">
+      <div className="bg-gray-800 p-10 rounded-2xl shadow-xl text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome!</h1>
+        <p className="text-xl mb-8">
+          You are successfully logged in
+          {user?.fullName ? `, ${user.fullName}` : ""}.
+        </p>
+        <button
+          onClick={handleLogout}
+          className="w-full py-3 text-white font-semibold bg-red-600 rounded-lg hover:bg-red-700 transition-colors"
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// --- NEW AuthPage Component ---
+// This component was formerly 'App', it holds the login/register UI
+const AuthPage = ({ setPage, setSuccessMessage, successMessage }) => {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
     // Background color for the whole page (dark charcoal)
     <div className="flex items-center justify-center min-h-screen bg-gray-900 font-sans">
+      {/* NEW: Render the toast component */}
+      <SuccessToast message={successMessage} />
+
       {/* Main container with gradient background for the left side and shadow */}
       <div className="relative flex w-full max-w-6xl overflow-hidden bg-gradient-to-r from-gray-950 to-black rounded-3xl shadow-2xl m-4">
-        
         {/* --- Left Panel (Illustration & Info) --- */}
         <LeftPanel />
-        
+
         {/* --- Right Panel (Form) --- */}
-        <RightPanel isLogin={isLogin} setIsLogin={setIsLogin} />
-        
+        {/* NEW: Pass the 'setSuccessMessage' and 'setPage' setters down to the forms */}
+        <RightPanel
+          isLogin={isLogin}
+          setIsLogin={setIsLogin}
+          setSuccessMessage={setSuccessMessage}
+          setPage={setPage}
+        />
       </div>
     </div>
   );
+};
+
+// --- Main App Component ---
+// This component now holds the state for toggling between Login and Register forms
+// AND acts as the "router"
+export default function App() {
+  const [page, setPage] = useState("auth");
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  // Simple router logic
+  switch (page) {
+    case "auth":
+      return (
+        <AuthPage
+          setPage={setPage}
+          successMessage={successMessage}
+          setSuccessMessage={setSuccessMessage}
+        />
+      );
+    case "home":
+      return <HomePage setPage={setPage} />;
+    default:
+      return (
+        <AuthPage
+          setPage={setPage}
+          successMessage={successMessage}
+          setSuccessMessage={setSuccessMessage}
+        />
+      );
+  }
 }
 
 // --- Left Panel Component ---
@@ -63,17 +189,23 @@ const LeftPanel = () => (
   <div className="relative hidden md:flex flex-col justify-between w-1/2 p-12">
     {/* Background image for the left panel */}
     {/* Corrected: Added absolute positioning and object-cover to make the image fill and clip */}
-    <img 
-      src="https://res.cloudinary.com/dy8vdilqu/image/upload/v1761993893/image3_xlyeyf.jpg" 
-      alt="3D Illustration" 
+    <img
+      src="https://res.cloudinary.com/dy8vdilqu/image/upload/v1761993893/image3_xlyeyf.jpg"
+      alt="3D Illustration"
       className="absolute inset-0 w-full h-full object-cover z-0 opacity-70" // opacity added to soften image for text
     />
 
     {/* Content overlay on top of the image */}
-    <div className="relative z-10 flex flex-col justify-between h-full text-white"> {/* Text color set to white */}
+    <div className="relative z-10 flex flex-col justify-between h-full text-white">
+      {" "}
+      {/* Text color set to white */}
       <div>
         {/* Logo - ensure it's visible on a dark background */}
-        <svg className="w-auto h-8 fill-current text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="w-auto h-8 fill-current text-white"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 0L23.26 21H.74L12 0z" />
         </svg>
         {/* Heading - ensure it's visible and stands out
@@ -81,7 +213,6 @@ const LeftPanel = () => (
           Find 3D Objects, Mock-ups, and Illustrations here.
         </h1> */}
       </div>
-      
       {/* Placeholder for additional content if needed, adjusted for dark background */}
       {/* <div className="mt-8 text-gray-300">
         <p className="text-center font-medium">[Additional text or elements]</p>
@@ -92,26 +223,102 @@ const LeftPanel = () => (
 
 // --- Right Panel Component ---
 // Handles the form container and language selector
-const RightPanel = ({ isLogin, setIsLogin }) => (
+// NEW: Accept and pass 'setSuccessMessage' and 'setPage' props
+const RightPanel = ({ isLogin, setIsLogin, setSuccessMessage, setPage }) => (
   // Right panel is white with a rounded top-left corner
   <div className="w-full md:w-1/2 p-12 bg-white rounded-tl-3xl">
     <div className="text-right">
       {/* Language selector */}
-      <span className="text-sm text-gray-600 cursor-pointer hover:text-gray-900">English (UK) ▼</span>
+      <span className="text-sm text-gray-600 cursor-pointer hover:text-gray-900">
+        English (UK) ▼
+      </span>
     </div>
 
     {/* Conditional Rendering: Show Login or Register form */}
+    {/* NEW: Pass 'setSuccessMessage' and 'setPage' down to both forms */}
     {isLogin ? (
-      <LoginForm setIsLogin={setIsLogin} />
+      <LoginForm
+        setIsLogin={setIsLogin}
+        setSuccessMessage={setSuccessMessage}
+        setPage={setPage}
+      />
     ) : (
-      <RegisterForm setIsLogin={setIsLogin} />
+      <RegisterForm
+        setIsLogin={setIsLogin}
+        setSuccessMessage={setSuccessMessage}
+        setPage={setPage}
+      />
     )}
   </div>
 );
 
 // --- Registration Form Component ---
-const RegisterForm = ({ setIsLogin }) => {
+// NEW: Accept 'setSuccessMessage' and 'setPage' props
+const RegisterForm = ({ setIsLogin, setSuccessMessage, setPage }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  // REMOVED: const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccessMessage(null); // Clear previous success messages
+
+    // Client-side validation
+    if (!fullName.trim()) {
+      setError("Full name is required");
+      return;
+    }
+    if (!email.includes("@")) {
+      setError("Enter a valid email");
+      return;
+    }
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:4000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ fullName, email, password }),
+      });
+      console.log(res.body);
+      if (!res.ok) {
+        let errBody = {};
+        try {
+          errBody = await res.json();
+        } catch (parseErr) {
+          // fall back to text if JSON parse fails
+          const text = await res.text().catch(() => "");
+          errBody = { message: text };
+        }
+        console.error("Signup error", res.status, errBody);
+        setError(errBody.message || errBody.messsage || "Signup failed");
+        return;
+      }
+      const data = await res.json();
+
+      // --- NEW SUCCESS LOGIC ---
+      // 1. Set the success message
+      setSuccessMessage("Registration complete! Redirecting...");
+
+      // 2. Wait 2 seconds, then store user and navigate
+      setTimeout(() => {
+        localStorage.setItem("user", JSON.stringify(data));
+        setPage("home"); // REPLACED: navigate("/");
+        setSuccessMessage(null); // Clear message
+      }, 2000); // 2-second delay
+      // --- END OF NEW LOGIC ---
+    } catch (err) {
+      setError("Network error");
+    }
+  };
 
   return (
     <div>
@@ -127,13 +334,46 @@ const RegisterForm = ({ setIsLogin }) => {
       </div>
 
       {/* Form */}
-      <form className="space-y-6">
-        <FormInput type="text" placeholder="Full name" />
-        <FormInput type="email" placeholder="Email Address" />
-        <PasswordInput 
-          visible={passwordVisible} 
-          setVisible={setPasswordVisible} 
-        />
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <input
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            type="text"
+            placeholder="Full name"
+            className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
+            required
+          />
+        </div>
+        <div>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email Address"
+            className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
+            required
+          />
+        </div>
+        <div className="relative">
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Password"
+            className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
+            required
+          />
+          <button
+            type="button"
+            className="absolute inset-y-0 right-0 flex items-center pr-3"
+            onClick={() => setPasswordVisible(!passwordVisible)}
+          >
+            {passwordVisible ? <IconEyeOff /> : <IconEye />}
+          </button>
+        </div>
+
+        {error && <p className="text-sm text-red-600">{error}</p>}
 
         {/* Submit button with dark styling */}
         <button
@@ -145,10 +385,9 @@ const RegisterForm = ({ setIsLogin }) => {
       </form>
 
       <p className="mt-6 text-sm text-center text-gray-600">
-        Already have an account?{' '}
-        {/* Link to switch to login form */}
-        <button 
-          onClick={() => setIsLogin(true)} 
+        Already have an account? {/* Link to switch to login form */}
+        <button
+          onClick={() => setIsLogin(true)}
           className="font-semibold text-gray-800 hover:underline bg-transparent border-none p-0 cursor-pointer"
         >
           Log In
@@ -159,8 +398,55 @@ const RegisterForm = ({ setIsLogin }) => {
 };
 
 // --- Login Form Component ---
-const LoginForm = ({ setIsLogin }) => {
+// NEW: Accept 'setSuccessMessage' and 'setPage' props
+const LoginForm = ({ setIsLogin, setSuccessMessage, setPage }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  // REMOVED: const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccessMessage(null); // Clear previous success messages
+
+    try {
+      const res = await fetch("http://localhost:4000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ email, password }),
+      });
+      if (!res.ok) {
+        let errBody = {};
+        try {
+          errBody = await res.json();
+        } catch (parseErr) {
+          const text = await res.text().catch(() => "");
+          errBody = { message: text };
+        }
+        console.error("Login error", res.status, errBody);
+        setError(errBody.messsage || errBody.message || "Login failed");
+        return;
+      }
+      const data = await res.json();
+
+      // --- NEW SUCCESS LOGIC ---
+      // 1. Set the success message
+      setSuccessMessage("Login successful! Redirecting...");
+
+      // 2. Wait 2 seconds, then store user and navigate
+      setTimeout(() => {
+        localStorage.setItem("user", JSON.stringify(data));
+        setPage("home"); // REPLACED: navigate("/");
+        setSuccessMessage(null); // Clear message
+      }, 2000); // 2-second delay
+      // --- END OF NEW LOGIC ---
+    } catch (err) {
+      setError("Network error");
+    }
+  };
 
   return (
     <div>
@@ -177,16 +463,43 @@ const LoginForm = ({ setIsLogin }) => {
       </div>
 
       {/* Form */}
-      <form className="space-y-6">
-        <FormInput type="email" placeholder="Email Address" />
-        <PasswordInput 
-          visible={passwordVisible} 
-          setVisible={setPasswordVisible} 
-        />
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email Address"
+            className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
+            required
+          />
+        </div>
+        <div className="relative">
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Password"
+            className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
+            required
+          />
+          <button
+            type="button"
+            className="absolute inset-y-0 right-0 flex items-center pr-3"
+            onClick={() => setPasswordVisible(!passwordVisible)}
+          >
+            {passwordVisible ? <IconEyeOff /> : <IconEye />}
+          </button>
+        </div>
+
+        {error && <p className="text-sm text-red-600">{error}</p>}
 
         <div className="flex justify-end">
           {/* Forgot password link */}
-          <a href="#" className="text-sm font-medium text-gray-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-800 hover:underline"
+          >
             Forgot password?
           </a>
         </div>
@@ -201,10 +514,9 @@ const LoginForm = ({ setIsLogin }) => {
       </form>
 
       <p className="mt-6 text-sm text-center text-gray-600">
-        Don't have an account?{' '}
-        {/* Link to switch to registration form */}
-        <button 
-          onClick={() => setIsLogin(false)} 
+        Don't have an account? {/* Link to switch to registration form */}
+        <button
+          onClick={() => setIsLogin(false)}
           className="font-semibold text-gray-800 hover:underline bg-transparent border-none p-0 cursor-pointer"
         >
           Create Account
@@ -214,14 +526,16 @@ const LoginForm = ({ setIsLogin }) => {
   );
 };
 
-
 // --- Reusable UI Components ---
 
 // Social Login Buttons
 const SocialLogins = ({ actionText }) => (
   <div className="flex flex-col sm:flex-row gap-4 mt-8">
     <SocialButton icon={<IconGoogle />} text={`${actionText} with Google`} />
-    <SocialButton icon={<IconFacebook />} text={`${actionText} with Facebook`} />
+    <SocialButton
+      icon={<IconFacebook />}
+      text={`${actionText} with Facebook`}
+    />
   </div>
 );
 
@@ -254,7 +568,7 @@ const FormInput = ({ type, placeholder }) => (
 const PasswordInput = ({ visible, setVisible }) => (
   <div className="relative">
     <input
-      type={visible ? 'text' : 'password'}
+      type={visible ? "text" : "password"}
       placeholder="Password"
       // Focus color changed to dark gray
       className="w-full py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-gray-800"
@@ -264,12 +578,7 @@ const PasswordInput = ({ visible, setVisible }) => (
       className="absolute inset-y-0 right-0 flex items-center pr-3"
       onClick={() => setVisible(!visible)}
     >
-      {visible ? (
-        <IconEyeOff />
-      ) : (
-        <IconEye />
-      )}
+      {visible ? <IconEyeOff /> : <IconEye />}
     </button>
   </div>
 );
-
