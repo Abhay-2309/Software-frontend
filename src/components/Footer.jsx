@@ -94,70 +94,83 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* Column 2: Links (Products, Mentorship) */}
-          <div className='space-y-6'>
-            <div>
-              <h4 className='font-semibold text-white mb-3'>Products</h4>
-              <ul className='space-y-2 text-sm'>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Brand & Engage
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Source
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Screen
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Assess
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Interview
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Hiring Automation
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className='font-semibold text-white mb-3'>Mentorship</h4>
-              <ul className='space-y-2 text-sm'>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Be a Mentor
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Explore Mentors
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Mentorship FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href='#' className='hover:text-white'>
-                    Mentorship Blogs
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+{/* Column 2: Links (Products, Mentorship, Quick Links) */}
+<div className='space-y-6'>
+  <div>
+    <h4 className='font-semibold text-white mb-3'>Products</h4>
+    <ul className='space-y-2 text-sm'>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Brand & Engage
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Source
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Screen
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Assess
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Interview
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Hiring Automation
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4 className='font-semibold text-white mb-3'>Mentorship</h4>
+    <ul className='space-y-2 text-sm'>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Be a Mentor
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Explore Mentors
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Mentorship FAQs
+        </a>
+      </li>
+      <li>
+        <a href='#' className='hover:text-white'>
+          Mentorship Blogs
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3 className='text-lg font-semibold mb-4'>Quick Links</h3>
+    <ul className='space-y-2 text-sm'>
+      <li>
+        <a href='/app/about' className='text-gray-400 hover:text-white'>About</a>
+      </li>
+      <li>
+        <a href='/app/schedule' className='text-gray-400 hover:text-white'>Schedule</a>
+      </li>
+      <li>
+        <a href='/app/register' className='text-gray-400 hover:text-white'>Register</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
           {/* Column 3: Links (Participate, Apply) */}
           <div className='space-y-6'>
