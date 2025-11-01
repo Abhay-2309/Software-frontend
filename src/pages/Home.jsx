@@ -13,7 +13,7 @@ const Home = () => {
             className="text-center"
           >
             <motion.img
-              src="/Logo.png"
+              src="/logo.png"
               alt="Hackathon 2026 Logo"
               className="w-32 h-32 mx-auto mb-8"
               initial={{ scale: 0 }}
@@ -27,7 +27,7 @@ const Home = () => {
               Join us for 48 hours of innovation, creativity, and coding
             </p>
             <a
-              href="/register"
+              href="/app/register"
               className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               Register Now
