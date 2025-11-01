@@ -1,4 +1,3 @@
-// Add these imports at the top of the file
 import {
   Mail,
   Phone,
@@ -9,7 +8,7 @@ import {
   Send,
   Youtube,
 } from 'react-feather';
-import { Sparkles } from 'heroicons-react';
+import { SparklesIcon } from '@heroicons/react/24/solid';
 import Navbar from './Navbar';
 import FeatureCard from './FeatureCard';
 import UserTypeCard from './UserTypeCard';
@@ -362,7 +361,7 @@ export const HomePage = () => {
             </p>
             <div className='mt-8 bg-gray-800 p-4 rounded-xl shadow-md border border-gray-700 flex items-center space-x-3 max-w-sm'>
               <div className='bg-purple-900 p-2 rounded-full'>
-                <Sparkles className='h-5 w-5 text-purple-300' />
+                <SparklesIcon className='h-5 w-5 text-purple-300' />
               </div>
               <div>
                 <span className='font-semibold text-white'>Kenya</span>
